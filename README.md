@@ -1,8 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Developer Portfolio
+
+A minimal developer portfolio website built with Next.js, inspired by themackabu.dev. This portfolio features a clean, minimalist design with dark mode support and responsive layout.
+
+## Features
+
+- Modern UI with dark/light mode support
+- Responsive design for all devices
+- Reusable layouts and components
+- Built with Next.js and TypeScript
+- Fast performance with Tailwind CSS
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18.0 or later
+- npm or yarn or pnpm
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/dev-portfolio.git
+cd dev-portfolio
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+3. Run the development server:
 
 ```bash
 npm run dev
@@ -10,27 +44,49 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+dev-portfolio/
+├── src/
+│   ├── app/                   # App router pages
+│   │   ├── page.tsx           # Home page
+│   │   ├── projects/          # Projects page
+│   │   ├── skills/            # Skills page
+│   │   ├── blog/              # Blog page
+│   │   ├── layout.tsx         # Root layout
+│   │   └── globals.css        # Global styles
+│   ├── components/            # Shared components
+│   │   ├── Header.tsx         # Header component
+│   │   ├── Footer.tsx         # Footer component
+│   │   ├── MainLayout.tsx     # Main layout wrapper
+│   │   └── ThemeScript.tsx    # Theme toggle script
+```
 
-## Learn More
+## Customization
 
-To learn more about Next.js, take a look at the following resources:
+- Edit `src/app/globals.css` to modify the global styles
+- Update the content in `src/app/page.tsx` and other pages
+- Modify the theme colors and design in `src/app/globals.css`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This application can be easily deployed to Vercel:
 
-## Deploy on Vercel
+```bash
+npm run build
+# or
+yarn build
+# or
+pnpm build
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/yourusername/dev-portfolio)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
