@@ -14,26 +14,24 @@ export default function Home() {
           I turn weird late-night ideas into functioning code before breakfast.
         </p>
 
-        <p className="mb-4 text-base leading-relaxed"></p>
+        <p className="mb-4 text-base leading-relaxed">
+          To make a long and boring story shorter: Now I work on backend
+          software development and my work output is finally catching up to my
+          moral principles and aesthetic ideals.
+        </p>
 
         <p className="mb-4 text-base">Some fun facts, because why be normal:</p>
 
         <ul className="list-none pl-4 mb-4 space-y-2">
           <li className="flex items-start">
-            <span className="mr-2 text-lg">• 🦊</span>
-            <span className="text-base leading-relaxed">
-              Foxes are the superior lifeform (this is objective science)
-            </span>
-          </li>
-          <li className="flex items-start">
-            <span className="mr-2 text-lg">• 🔥</span>
+            <span className="mr-2 text-lg">🔥</span>
             <span className="text-base leading-relaxed">
               Java is my favorite programming language{" "}
               <span className="ml-1">📈</span>
             </span>
           </li>
           <li className="flex items-start">
-            <span className="mr-2 text-lg">• 🍓</span>
+            <span className="mr-2 text-lg">🍓</span>
             <span className="text-base leading-relaxed">
               Strawberries do belong in code comments (and maybe pizza too?)
             </span>
