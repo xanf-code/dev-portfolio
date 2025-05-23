@@ -7,19 +7,31 @@ import { supabase } from "@/utils/supabase";
 import { Project } from "@/utils/database.types";
 import Link from "next/link";
 import Image from "next/image";
+import { Badge } from "@/components/ui/badge";
 
 const otherProjects = [
   {
     title: "[fullstack]",
     description: "Fullstack client for afcai.com",
     link: "https://github.com/xanf-code/afcai-frontend",
+    skills: "Next.js, Node.js, Express,Tailwind CSS, PostgreSQL",
   },
   {
     title: "[mobile]",
     description: "security breach reporter mobile app",
     link: "https://github.com/xanf-code/whats_you",
+    skills: "Flutter, Firebase, Git",
   },
 ];
+
+const renderSkills = (skills: string) => (
+  <div className="flex flex-wrap gap-2 mt-2">
+    {skills.split(",").map((skill, idx) => (
+      <Badge key={idx}>{skill.trim()}</Badge>
+    ))}
+  </div>
+);
+
 export default function Projects() {
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
@@ -84,11 +96,11 @@ export default function Projects() {
         {loading || error || projects.length === 0 ? (
           renderPlaceholder()
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-12">
+          <div className="flex flex-col gap-y-8">
             {projects.map((project) => (
               <div
                 key={project.title}
-                className="group cursor-pointer"
+                className="w-full shadow-md p-2 transition hover:shadow-lg cursor-pointer"
                 onClick={() => window.open(project.link, "_blank")}
               >
                 <ProjectCard
@@ -98,7 +110,15 @@ export default function Projects() {
                   link={project.link}
                   status={project.status}
                   imageUrl={project.imageurl}
+                  skills={project.skills}
                 />
+                {/* <div className="mt-4"> */}
+                {/* <h3 className="text-xl font-bold text-white">
+                    {project.title}
+                  </h3> */}
+                {/* <p className="text-gray-300 mt-1">{project.description}</p> */}
+                {/* {renderSkills(placeholderSkills)} */}
+                {/* </div> */}
               </div>
             ))}
           </div>
@@ -112,7 +132,7 @@ export default function Projects() {
 
         <div>
           {otherProjects.map((project, id) => (
-            <div key={id}>
+            <div key={id} className="mb-4">
               <Link href={project.link}>
                 <p className="text-white hover:underline hover:decoration-dashed">
                   <span className="text-sm text-gray-300">
@@ -124,6 +144,7 @@ export default function Projects() {
                   </span>
                 </p>
               </Link>
+              {renderSkills(project.skills)}
             </div>
           ))}
         </div>

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { generatePlaceholderSVG } from "./PlaceholderImage";
+import { Badge } from "@/components/ui/badge";
 
 type ProjectStatus = "released" | "develop" | "progress" | "archived";
 
@@ -12,7 +13,16 @@ interface ProjectCardProps {
   link: string;
   status: ProjectStatus;
   bgColor?: string;
+  skills: string;
 }
+
+const renderSkills = (skills: string) => (
+  <div className="flex flex-wrap gap-2 mt-2">
+    {skills.split(",").map((skill, idx) => (
+      <Badge key={idx}>{skill.trim()}</Badge>
+    ))}
+  </div>
+);
 
 export default function ProjectCard({
   title,
@@ -20,6 +30,7 @@ export default function ProjectCard({
   imageUrl,
   status,
   bgColor = "#222",
+  skills,
 }: ProjectCardProps) {
   const imageSrc = imageUrl || generatePlaceholderSVG(title, bgColor);
 
@@ -60,6 +71,7 @@ export default function ProjectCard({
 
       {/* Project Description */}
       <p className="text-zinc-400">{description}</p>
+      {renderSkills(skills)}
     </div>
   );
 }

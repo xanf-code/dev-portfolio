@@ -9,6 +9,7 @@ export interface Project {
   imageurl?: string;
   bgColor?: string;
   created_at?: string;
+  skills: string;
 }
 
 export type Database = {

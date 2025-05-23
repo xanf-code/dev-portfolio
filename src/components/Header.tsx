@@ -14,7 +14,7 @@ const navItems: NavItem[] = [
   { name: "~", path: "/" },
   { name: "Projects", path: "/projects" },
   { name: "Skills", path: "/skills" },
-  { name: "Blog", path: "/blog" },
+  // { name: "Blog", path: "/blog" },
   { name: "Github", path: "https://github.com/xanf-code", external: true },
 ];
 
@@ -40,6 +40,7 @@ export default function Header() {
                 <Link
                   key={item.name}
                   href={item.path}
+                  target={item.external ? "_blank" : undefined}
                   className={`font-bold px-3 py-1 relative ${
                     isActive
                       ? "bg-[#0ea5e9] text-white underline"
