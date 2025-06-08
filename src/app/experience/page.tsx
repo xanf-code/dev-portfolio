@@ -8,7 +8,7 @@ import experienceData from "@/data/experience.json";
 export default function Experience() {
   return (
     <MainLayout>
-      <section className="max-w-4xl px-2 sm:px-4 md:px-8 mx-auto">
+      <section className="max-w-4xl px-2sm:px-4 mx-auto">
         <div className="mb-8">
           <h1 className="text-gray-300 text-base sm:text-lg">experience</h1>
           <h2 className="text-white text-2xl sm:text-3xl font-bold">
