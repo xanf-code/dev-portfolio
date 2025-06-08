@@ -6,7 +6,7 @@ export default function Skills() {
     <MainLayout>
       <section className="max-w-4xl">
         <div className="mb-8">
-          <h1 className="text-gray-300 mb-2">skills</h1>
+          <h1 className="text-gray-300">skills</h1>
           <h2 className="text-white text-3xl font-bold">expertise</h2>
         </div>
 

@@ -9,36 +9,40 @@ export default function Home() {
           <h1 className="text-5xl font-bold mb-3 tracking-tight bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
             hi hi ~
           </h1>
-          <h2 className="text-2xl mb-6 font-semibold text-gray-200">
-            I&apos;m a chaotic good developer with a tail and too many side
-            projects.
-          </h2>
         </div>
 
         <div className="space-y-6 text-gray-300">
           <p className="text-lg leading-relaxed">
-            I turn weird late-night ideas into functioning code before
-            breakfast.
+            In the past, I&apos;ve enjoyed working on, LLM-driven recommendation
+            systems, scalable architecture and high-throughput systems. Now I
+            work on core and full stack software development and my work output
+            is finally catching up to my moral principles and aesthetic ideals.
           </p>
-
-          <p className="text-lg leading-relaxed">
-            To make a long and boring story shorter: Now I work on core and full
-            stack software development and my work output is finally catching up
-            to my moral principles and aesthetic ideals.
-          </p>
-
-          <p className="text-lg mb-4 font-medium text-white">
-            Some fun facts, because why be normal:
-          </p>
+          <p className="text-lg mb-4 font-medium text-white">About me:</p>
 
           <ul className="space-y-4">
+            <li className="flex items-start group">
+              <span className="mr-3 text-xl group-hover:scale-110 transition-transform">
+                🎓
+              </span>
+              <div>
+                <span className="text-lg leading-relaxed">
+                  Currently studying at Northeastern University, Boston{" "}
+                  <span className="ml-1">🇺🇸</span>
+                </span>
+                <div className="flex gap-2 mt-2">
+                  <Badge>MS in Software Engineering Systems</Badge>
+                  <Badge>Expected 2026</Badge>
+                </div>
+              </div>
+            </li>
             <li className="flex items-start group">
               <span className="mr-3 text-xl group-hover:scale-110 transition-transform">
                 🔥
               </span>
               <div>
                 <span className="text-lg leading-relaxed">
-                  Java is my favorite programming language{" "}
+                  Java is my most used programming language{" "}
                   <span className="ml-1">📈</span>
                 </span>
                 <div className="flex gap-2 mt-2">
@@ -63,20 +67,6 @@ export default function Home() {
                   <Badge>Express</Badge>
                   <Badge>React</Badge>
                   <Badge>Node.js</Badge>
-                </div>
-              </div>
-            </li>
-            <li className="flex items-start group">
-              <span className="mr-3 text-xl group-hover:scale-110 transition-transform">
-                🍓
-              </span>
-              <div>
-                <span className="text-lg leading-relaxed">
-                  Strawberries do belong in code comments (and maybe pizza too?)
-                </span>
-                <div className="flex gap-2 mt-2">
-                  <Badge>Code Comments</Badge>
-                  <Badge>Pizza</Badge>
                 </div>
               </div>
             </li>

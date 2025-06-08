@@ -14,6 +14,8 @@ const navItems: NavItem[] = [
   { name: "~", path: "/" },
   { name: "Projects", path: "/projects" },
   { name: "Skills", path: "/skills" },
+  { name: "Experience", path: "/experience" },
+  { name: "Principles", path: "/principles" },
   // { name: "Blog", path: "/blog" },
   { name: "Github", path: "https://github.com/xanf-code", external: true },
 ];

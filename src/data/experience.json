@@ -1,0 +1,51 @@
+{
+  "experiences": [
+    {
+      "company": "London Stock Exchange Group",
+      "role": "Software Engineer",
+      "period": "Aug 2022 - Aug 2024",
+      "location": "Bangalore, India",
+      "logo": "/images/lseg.png",
+      "description": [
+        "Built financial transaction screening platform serving 40K+ institutions",
+        "Architected AWS Lambda functions for concurrent SQL and S3 operations",
+        "Configured AWS WAF blocking 50,000+ malicious requests daily",
+        "Developed Kafka and Elasticsearch for automated data analysis",
+        "Reduced release cycle time from 1 week to 3 days"
+      ],
+      "technologies": [
+        "Java",
+        "Spring Boot",
+        "Angular",
+        "AWS",
+        "Python",
+        "Flask",
+        "Kafka",
+        "Elasticsearch",
+        "Terraform",
+        "Jenkins"
+      ]
+    },
+    {
+      "company": "Allstate Insurance",
+      "role": "Software Engineer Intern",
+      "period": "Jan 2022 - Jul 2022",
+      "location": "Bangalore, India",
+      "logo": "/images/allstate.jpeg",
+      "description": [
+        "Developed React dashboard tracking 3,000+ cloud components",
+        "Designed PostgreSQL schema with optimized indexing strategies",
+        "Implemented Redis caching for 50,000+ daily analytics",
+        "Reduced API response times by 40% through optimization"
+      ],
+      "technologies": [
+        "React",
+        "Node.js",
+        "PostgreSQL",
+        "Redis",
+        "RabbitMQ",
+        "AWS"
+      ]
+    }
+  ]
+}
