@@ -31,8 +31,8 @@ export default function Home() {
                   <span className="ml-1">🇺🇸</span>
                 </span>
                 <div className="flex gap-2 mt-2">
-                  <Badge>MS in Software Engineering Systems</Badge>
-                  <Badge>Expected 2026</Badge>
+                  <Badge>MS, Software Engineering</Badge>
+                  <Badge>2026</Badge>
                 </div>
               </div>
             </li>
@@ -49,7 +49,6 @@ export default function Home() {
                   <Badge>Java</Badge>
                   <Badge>Angular</Badge>
                   <Badge>Spring Boot</Badge>
-                  <Badge>Hibernate</Badge>
                 </div>
               </div>
             </li>
