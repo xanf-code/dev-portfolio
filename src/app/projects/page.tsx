@@ -43,7 +43,7 @@ export default function Projects() {
         const { data, error } = await supabase
           .from("projects")
           .select("*")
-          .order("id");
+          .order("created_at", { ascending: false });
 
         if (error) {
           throw error;
