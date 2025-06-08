@@ -10,10 +10,8 @@ export default function Experience() {
     <MainLayout>
       <section className="max-w-4xl px-2sm:px-4 mx-auto">
         <div className="mb-8">
-          <h1 className="text-gray-300 text-base sm:text-lg">experience</h1>
-          <h2 className="text-white text-2xl sm:text-3xl font-bold">
-            work history
-          </h2>
+          <h1 className="text-gray-300">experience</h1>
+          <h2 className="text-white text-3xl font-bold">work history</h2>
         </div>
 
         <div className="space-y-12">
