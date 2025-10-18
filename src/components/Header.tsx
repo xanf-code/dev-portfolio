@@ -37,7 +37,7 @@ export default function Header() {
         </Link>
         {/* Hamburger for mobile */}
         <button
-          className="sm:hidden p-2 rounded focus:outline-none focus:ring-2 focus:ring-cyan-400"
+          className="sm:hidden p-2 rounded-sm focus:outline-hidden focus:ring-2 focus:ring-cyan-400"
           onClick={() => setMenuOpen((v) => !v)}
           aria-label={menuOpen ? "Close menu" : "Open menu"}
         >
@@ -76,7 +76,7 @@ export default function Header() {
       {/* Mobile menu overlay */}
       {menuOpen && (
         <div
-          className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm sm:hidden"
+          className="fixed inset-0 z-40 bg-black/60 backdrop-blur-xs sm:hidden"
           onClick={() => setMenuOpen(false)}
         />
       )}
