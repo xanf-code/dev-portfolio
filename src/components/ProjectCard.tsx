@@ -36,7 +36,7 @@ export default function ProjectCard({
 
   return (
     <div className="relative flex flex-col">
-      <div className="relative w-full h-36 rounded-sm overflow-hidden border border-zinc-800 mb-3">
+      <div className="relative w-full h-36 rounded-xs overflow-hidden border border-zinc-800 mb-3">
         {typeof imageSrc === "string" && imageSrc.startsWith("data:") ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img

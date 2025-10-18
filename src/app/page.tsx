@@ -6,7 +6,7 @@ export default function Home() {
     <MainLayout>
       <section className="max-w-3xl">
         <div className="mb-8">
-          <h1 className="text-5xl font-bold mb-3 tracking-tight bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+          <h1 className="text-5xl font-bold mb-3 tracking-tight bg-linear-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
             hi hi ~
           </h1>
         </div>

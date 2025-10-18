@@ -20,15 +20,15 @@ export default function Principles() {
           <li>Look at things.</li>
           <li>
             Never name something{" "}
-            <code className="bg-zinc-800 px-2 py-1 rounded text-sm text-gray-200">
+            <code className="bg-zinc-800 px-2 py-1 rounded-sm text-sm text-gray-200">
               end
             </code>
             . Always either{" "}
-            <code className="bg-zinc-800 px-2 py-1 rounded text-sm text-gray-200">
+            <code className="bg-zinc-800 px-2 py-1 rounded-sm text-sm text-gray-200">
               endExclusive
             </code>{" "}
             or{" "}
-            <code className="bg-zinc-800 px-2 py-1 rounded text-sm text-gray-200">
+            <code className="bg-zinc-800 px-2 py-1 rounded-sm text-sm text-gray-200">
               endInclusive
             </code>
             .
