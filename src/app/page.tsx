@@ -27,8 +27,7 @@ export default function Home() {
               </span>
               <div>
                 <span className="text-lg leading-relaxed">
-                  Currently studying at Northeastern University, Boston{" "}
-                  <span className="ml-1">🇺🇸</span>
+                  Northeastern University, Boston{" "}
                 </span>
                 <div className="flex gap-2 mt-2">
                   <Badge>MS, Software Engineering</Badge>
@@ -38,34 +37,16 @@ export default function Home() {
             </li>
             <li className="flex items-start group">
               <span className="mr-3 text-xl group-hover:scale-110 transition-transform">
-                🔥
+                💻
               </span>
               <div>
                 <span className="text-lg leading-relaxed">
-                  Java is my most used programming language{" "}
-                  <span className="ml-1">📈</span>
+                  Applied ML/AI Intern at Dassault Systèmes{" "}
                 </span>
                 <div className="flex gap-2 mt-2">
-                  <Badge>Java</Badge>
-                  <Badge>Angular</Badge>
-                  <Badge>Spring Boot</Badge>
-                </div>
-              </div>
-            </li>
-            <li className="flex items-start group">
-              <span className="mr-3 text-xl group-hover:scale-110 transition-transform">
-                ⚡
-              </span>
-              <div>
-                <span className="text-lg leading-relaxed">
-                  Building full stack apps with MERN stack is my jam{" "}
-                  <span className="ml-1">🚀</span>
-                </span>
-                <div className="flex gap-2 mt-2">
-                  <Badge>MongoDB</Badge>
-                  <Badge>Express</Badge>
-                  <Badge>React</Badge>
-                  <Badge>Node.js</Badge>
+                  <Badge>Python</Badge>
+                  <Badge>ML</Badge>
+                  <Badge>AI Agents</Badge>
                 </div>
               </div>
             </li>

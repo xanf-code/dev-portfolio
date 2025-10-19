@@ -1,6 +1,28 @@
 {
   "experiences": [
     {
+      "company": "Dassault Systèmes",
+      "role": "Applied ML/AI Engineer",
+      "period": "Jul 2025 - Present",
+      "location": "Massachusetts, United States",
+      "logo": "/images/dassault.png",
+      "description": [
+        "Engineered multi tenant ML recommendation model with two-tower architecture and custom embeddings",
+        "Built conversational change agent using LangChain and LangGraph for autonomous workflow automation",
+        "Deployed end-to-end ML CD pipeline with custom encodings, vector databases, and AI agents"
+      ],
+      "technologies": [
+        "Python",
+        "Vector Databases",
+        "AI Agents",
+        "Recommendation System",
+        "Elasticsearch",
+        "LangChain",
+        "LangGraph",
+        "MLOps"
+      ]
+    },
+    {
       "company": "London Stock Exchange Group",
       "role": "Software Engineer",
       "period": "Aug 2022 - Aug 2024",
