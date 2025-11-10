@@ -17,7 +17,7 @@ export default function BlogPost() {
 
         {/* Blog content */}
         <div className="prose prose-invert prose-lg max-w-none">
-          <div className="space-y-6 text-gray-300 leading-relaxed text-justify">
+          <div className="space-y-6 text-gray-300 leading-relaxed text-left">
             <p>
               So I came back to what I actually am: someone who writes code.
               Someone who, if we&apos;re being honest, struggles with the things
