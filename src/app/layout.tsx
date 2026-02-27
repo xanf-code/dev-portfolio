@@ -29,7 +29,9 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased`}
       >
-        <div className="max-w-3xl mx-auto px-10 py-10">{children}</div>
+        <div className="max-w-3xl 2xl:max-w-4xl mx-auto px-5 sm:px-8 lg:px-10 py-8 sm:py-10 lg:py-12">
+          {children}
+        </div>
       </body>
     </html>
   );
