@@ -4,30 +4,33 @@ import { Badge } from "@/components/ui/badge";
 export default function Home() {
   return (
     <MainLayout>
-      <section className="max-w-3xl">
-        <div className="mb-8">
+      <section className="max-w-3xl space-y-12">
+        <div>
           <h1 className="text-5xl font-bold mb-3 tracking-tight bg-linear-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
             hi hi ~
           </h1>
         </div>
 
-        <div className="space-y-6 text-gray-300">
+        <section className="space-y-6 text-gray-300">
           <p className="text-lg leading-relaxed">
-            In the past, I&apos;ve enjoyed working on, LLM-driven recommendation
-            systems, scalable architecture and high-throughput systems. Now I
-            work on core and full stack software development and my work output
-            is finally catching up to my moral principles and aesthetic ideals.
+            I enjoy building LLM-powered recommendation systems, scalable
+            architectures, and high-throughput products. Today, I focus on core
+            and full-stack engineering while aligning my work with strong
+            principles and clean design.
           </p>
-          <p className="text-lg mb-4 font-medium text-white">About me:</p>
+          <p className="text-lg font-medium text-white">About me:</p>
 
           <ul className="space-y-4">
             <li className="flex items-start group">
-              <span className="mr-3 text-xl group-hover:scale-110 transition-transform">
+              <span
+                aria-hidden="true"
+                className="mr-3 text-xl group-hover:scale-110 transition-transform"
+              >
                 🎓
               </span>
               <div>
                 <span className="text-lg leading-relaxed">
-                  Northeastern University, Boston{" "}
+                  Northeastern University, Boston
                 </span>
                 <div className="flex gap-2 mt-2">
                   <Badge>MS, Software Engineering</Badge>
@@ -36,12 +39,16 @@ export default function Home() {
               </div>
             </li>
             <li className="flex items-start group">
-              <span className="mr-3 text-xl group-hover:scale-110 transition-transform">
+              <span
+                aria-hidden="true"
+                className="mr-3 text-xl group-hover:scale-110 transition-transform"
+              >
                 💻
               </span>
               <div>
                 <span className="text-lg leading-relaxed">
-                  Applied ML/AI Intern at Dassault Systèmes{" "}
+                  Applied ML/AI Engineer at Dassault Systèmes (Jul 2025 - Jan
+                  2026)
                 </span>
                 <div className="flex gap-2 mt-2">
                   <Badge>Python</Badge>
@@ -51,9 +58,53 @@ export default function Home() {
               </div>
             </li>
           </ul>
-        </div>
+        </section>
 
-        <div className="flex flex-col space-y-3 mt-12 text-sm">
+        <section className="space-y-3">
+          <h2 className="text-xl font-semibold text-white">Certifications</h2>
+          <p className="text-sm text-gray-400">
+            Industry-recognized AWS certifications validating cloud architecture
+            and development skills.
+          </p>
+          <ul className="space-y-3">
+            <li className="flex items-start group">
+              <span
+                aria-hidden="true"
+                className="mr-3 text-xl group-hover:scale-110 transition-transform"
+              >
+                ☁️
+              </span>
+              <div>
+                <span className="text-lg leading-relaxed">
+                  AWS Certified Developer - Associate
+                </span>
+                <div className="flex gap-2 mt-2">
+                  <Badge>AWS</Badge>
+                  <Badge>Associate</Badge>
+                </div>
+              </div>
+            </li>
+            <li className="flex items-start group">
+              <span
+                aria-hidden="true"
+                className="mr-3 text-xl group-hover:scale-110 transition-transform"
+              >
+                🏗️
+              </span>
+              <div>
+                <span className="text-lg leading-relaxed">
+                  AWS Certified Solutions Architect - Associate
+                </span>
+                <div className="flex gap-2 mt-2">
+                  <Badge>AWS</Badge>
+                  <Badge>Associate</Badge>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section className="flex flex-col space-y-3 text-sm">
           <a
             href="https://www.linkedin.com/in/darshanaswath/"
             className="flex items-center text-gray-400 hover:text-white transition-colors duration-200 group"
@@ -77,11 +128,9 @@ export default function Home() {
             rel="noopener noreferrer"
           >
             <span className="mr-2">→</span>
-            <span className="group-hover:underline">
-              darshanaswath@gmail.com
-            </span>
+            <span className="group-hover:underline">darshanaswath@gmail.com</span>
           </a>
-        </div>
+        </section>
       </section>
     </MainLayout>
   );

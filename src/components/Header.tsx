@@ -19,7 +19,7 @@ const navItems: NavItem[] = [
   { name: "Experience", path: "/experience" },
   { name: "Principles", path: "/principles" },
   { name: "Blog", path: "/blog" },
-  { name: "Github", path: "https://github.com/xanf-code", external: true },
+  { name: "GitHub", path: "https://github.com/xanf-code", external: true },
 ];
 
 export default function Header() {
@@ -35,7 +35,6 @@ export default function Header() {
         >
           darshan.a
         </Link>
-        {/* Hamburger for mobile */}
         <button
           className="sm:hidden p-2 rounded-sm focus:outline-hidden focus:ring-2 focus:ring-cyan-400"
           onClick={() => setMenuOpen((v) => !v)}
@@ -48,39 +47,50 @@ export default function Header() {
           )}
         </button>
       </div>
-      {/* Desktop nav */}
+
       <div className="hidden sm:flex">
         <div className="flex p-1 rounded-md">
-          <nav className="flex items-center">
+          <nav className="flex items-center gap-1">
             {navItems.map((item) => {
-              const isActive = pathname === item.path;
+              const isActive = !item.external && pathname === item.path;
               return (
                 <Link
                   key={item.name}
                   href={item.path}
                   target={item.external ? "_blank" : undefined}
-                  className={`font-bold px-3 py-1 relative ${
+                  rel={item.external ? "noopener noreferrer" : undefined}
+                  aria-current={isActive ? "page" : undefined}
+                  className={`font-bold px-3 py-1.5 rounded-md relative transition-colors border ${
                     isActive
-                      ? "bg-[#0ea5e9] text-white underline"
-                      : "text-gray-300 hover:text-white"
-                  } transition-colors`}
+                      ? "bg-cyan-600/90 text-white border-cyan-400 shadow-[0_0_0_1px_rgba(34,211,238,.35)]"
+                      : item.external
+                        ? "text-cyan-300/90 border-transparent hover:text-cyan-100 hover:bg-cyan-900/30"
+                        : "text-gray-300 border-transparent hover:text-white hover:bg-zinc-800/70"
+                  }`}
                 >
-                  {item.icon && <span className="mr-1">{item.icon}</span>}
-                  {item.name}
+                  <span className="inline-flex items-center gap-1">
+                    {item.icon && <span>{item.icon}</span>}
+                    {item.name}
+                    {item.external && (
+                      <span aria-hidden="true" className="text-xs opacity-90">
+                        ↗
+                      </span>
+                    )}
+                  </span>
                 </Link>
               );
             })}
           </nav>
         </div>
       </div>
-      {/* Mobile menu overlay */}
+
       {menuOpen && (
         <div
           className="fixed inset-0 z-40 bg-black/60 backdrop-blur-xs sm:hidden"
           onClick={() => setMenuOpen(false)}
         />
       )}
-      {/* Mobile nav */}
+
       <nav
         className={`fixed top-0 left-0 right-0 z-50 sm:hidden transition-transform duration-300 ${
           menuOpen ? "translate-y-0" : "-translate-y-full"
@@ -89,21 +99,32 @@ export default function Header() {
       >
         <div className="bg-zinc-900/95 border-b border-zinc-800 shadow-lg rounded-b-xl px-6 pt-4 pb-6 flex flex-col gap-2">
           {navItems.map((item) => {
-            const isActive = pathname === item.path;
+            const isActive = !item.external && pathname === item.path;
             return (
               <Link
                 key={item.name}
                 href={item.path}
                 target={item.external ? "_blank" : undefined}
+                rel={item.external ? "noopener noreferrer" : undefined}
+                aria-current={isActive ? "page" : undefined}
                 className={`font-bold py-2 px-2 rounded text-lg transition-colors ${
                   isActive
-                    ? "bg-cyan-700/80 text-white underline"
-                    : "text-cyan-200 hover:bg-cyan-800/40 hover:text-white"
+                    ? "bg-cyan-700/80 text-white"
+                    : item.external
+                      ? "text-cyan-300 hover:bg-cyan-800/30 hover:text-white"
+                      : "text-cyan-200 hover:bg-cyan-800/40 hover:text-white"
                 }`}
                 onClick={() => setMenuOpen(false)}
               >
-                {item.icon && <span className="mr-1">{item.icon}</span>}
-                {item.name}
+                <span className="inline-flex items-center gap-1">
+                  {item.icon && <span>{item.icon}</span>}
+                  {item.name}
+                  {item.external && (
+                    <span aria-hidden="true" className="text-sm">
+                      ↗
+                    </span>
+                  )}
+                </span>
               </Link>
             );
           })}
