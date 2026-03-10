@@ -2,7 +2,7 @@
   "experiences": [
     {
       "company": "Dassault Systèmes",
-      "role": "Applied ML/AI Engineer",
+      "role": "Software Engineer co-op",
       "period": "Jul 2025 - Jan 2026",
       "location": "Massachusetts, United States",
       "logo": "/images/dassault.png",
@@ -25,7 +25,7 @@
     {
       "company": "London Stock Exchange Group",
       "role": "Software Engineer",
-      "period": "Aug 2022 - Aug 2024",
+      "period": "July 2022 - Aug 2024",
       "location": "Bangalore, India",
       "logo": "/images/lseg.png",
       "description": [
@@ -46,27 +46,6 @@
         "Elasticsearch",
         "Terraform",
         "Jenkins"
-      ]
-    },
-    {
-      "company": "Allstate Insurance",
-      "role": "Software Engineer Intern",
-      "period": "Jan 2022 - Jul 2022",
-      "location": "Bangalore, India",
-      "logo": "/images/allstate.jpeg",
-      "description": [
-        "Developed React dashboard tracking 3,000+ cloud components",
-        "Designed PostgreSQL schema with optimized indexing strategies",
-        "Implemented Redis caching for 50,000+ daily analytics",
-        "Reduced API response times by 40% through optimization"
-      ],
-      "technologies": [
-        "React",
-        "Node.js",
-        "PostgreSQL",
-        "Redis",
-        "RabbitMQ",
-        "AWS"
       ]
     }
   ]

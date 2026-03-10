@@ -4,20 +4,20 @@ import Link from "next/link";
 export default function BlogPost() {
   return (
     <MainLayout>
-      <article className="max-w-3xl">
+      <article className="max-w-3xl mx-auto w-full">
         <Link
           href="/blog"
-          className="inline-flex items-center text-gray-400 hover:text-white transition-colors mb-8 group"
+          className="inline-flex items-center text-gray-400 hover:text-black transition-colors mb-8 group text-sm"
         >
           <span className="group-hover:-translate-x-1 transition-transform">
             ←
           </span>
-          <span className="ml-2">Back</span>
+          <span className="ml-2">Back to blog</span>
         </Link>
 
         {/* Blog content */}
-        <div className="prose prose-invert prose-lg max-w-none">
-          <div className="space-y-6 text-gray-300 leading-relaxed text-left">
+        <div className="prose prose-lg max-w-none">
+          <div className="space-y-6 text-gray-800 leading-relaxed text-left">
             <p>
               So I came back to what I actually am: someone who writes code.
               Someone who, if we&apos;re being honest, struggles with the things

@@ -24,13 +24,6 @@ const otherProjects = [
   },
 ];
 
-const renderSkills = (skills: string) => (
-  <div className="flex flex-wrap gap-2 mt-2">
-    {skills.split(",").map((skill, idx) => (
-      <Badge key={idx}>{skill.trim()}</Badge>
-    ))}
-  </div>
-);
 
 export default function Projects() {
   const [projects, setProjects] = useState<Project[]>([]);
@@ -45,106 +38,67 @@ export default function Projects() {
           .select("*")
           .order("created_at", { ascending: false });
 
-        if (error) {
-          throw error;
-        }
-
-        if (data) {
-          setProjects(data);
-        }
+        if (error) throw error;
+        if (data) setProjects(data);
       } catch (error) {
         console.error("Error fetching projects:", error);
-        setError("Failed to load projects. Please try again later.");
+        setError("Failed to load projects.");
       } finally {
         setLoading(false);
       }
     }
-
     fetchProjects();
   }, []);
 
-  const renderPlaceholder = () => {
+  if (loading || error || projects.length === 0) {
     return (
-      <div className="flex flex-col items-center justify-center py-10 space-y-4">
-        <div className="relative w-52 h-52 opacity-80">
-          <Image
-            src="/assets/loading.png"
-            alt="Loading projects"
-            fill
-            className="object-contain"
-          />
+      <MainLayout>
+        <div className="py-20 text-center text-gray-400">
+          {loading ? "Loading..." : error || "No projects found."}
         </div>
-        <p className="text-gray-400 text-center">
-          {loading
-            ? "Loading projects..."
-            : error
-            ? "Error loading projects. Please try again later."
-            : "No projects found."}
-        </p>
-      </div>
+      </MainLayout>
     );
-  };
+  }
 
   return (
     <MainLayout>
       <section>
-        <div className="mb-6">
-          <h1 className="text-gray-300">projects</h1>
-          <h2 className="text-white text-3xl font-bold">all</h2>
+        <div className="mb-12">
+          <h1 className="text-3xl font-bold">Projects</h1>
         </div>
 
-        {loading || error || projects.length === 0 ? (
-          renderPlaceholder()
-        ) : (
-          <div className="flex flex-col gap-y-8">
-            {projects.map((project) => (
-              <div
-                key={project.title}
-                className="w-full shadow-md p-2 transition hover:shadow-lg cursor-pointer"
-                onClick={() => window.open(project.link, "_blank")}
-              >
-                <ProjectCard
-                  title={project.title}
-                  description={project.description}
-                  bgColor={project.bgColor}
-                  link={project.link}
-                  status={project.status}
-                  imageUrl={project.imageurl}
-                  skills={project.skills}
-                />
-                {/* <div className="mt-4"> */}
-                {/* <h3 className="text-xl font-bold text-white">
-                    {project.title}
-                  </h3> */}
-                {/* <p className="text-gray-300 mt-1">{project.description}</p> */}
-                {/* {renderSkills(placeholderSkills)} */}
-                {/* </div> */}
-              </div>
-            ))}
-          </div>
-        )}
-
-        {/* Others Projects */}
-        <div className="mb-4 mt-6">
-          <h1 className="text-gray-300">projects</h1>
-          <h2 className="text-white text-3xl font-bold">other</h2>
+        <div className="flex flex-col gap-8">
+          {projects.map((project) => (
+            <div key={project.title} className="w-full">
+              <ProjectCard
+                title={project.title}
+                description={project.description}
+                link={project.link}
+                status={project.status}
+                imageUrl={project.imageurl}
+                skills={project.skills}
+              />
+            </div>
+          ))}
         </div>
 
-        <div>
+        <div className="mt-12 mb-12">
+          <h2 className="text-xl font-bold">More Projects</h2>
+        </div>
+
+        <div className="space-y-8">
           {otherProjects.map((project, id) => (
-            <div key={id} className="mb-4">
-              <Link href={project.link}>
-                <p className="text-white hover:underline hover:decoration-dashed">
-                  <span className="text-sm text-gray-300">
-                    {project.title}{" "}
-                  </span>
-                  <span className="text-gray-300">- </span>
-                  <span className="text-white font-medium">
-                    {project.description}
-                  </span>
-                </p>
+            <div key={id} className="group">
+              <Link href={project.link} className="no-underline">
+                <div className="flex justify-between items-baseline mb-1">
+                  <h3 className="font-bold group-hover:underline">{project.title}</h3>
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400">External</span>
+                </div>
+                <p className="text-sm text-gray-600">{project.description}</p>
+                <div className="mt-2 text-[10px] font-bold uppercase tracking-widest text-gray-400">
+                  {project.skills.split(",").map(s => s.trim()).join(" / ")}
+                </div>
               </Link>
-              {renderSkills(project.skills)}
             </div>
           ))}
         </div>
@@ -152,3 +106,4 @@ export default function Projects() {
     </MainLayout>
   );
 }
+

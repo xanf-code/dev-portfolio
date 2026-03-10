@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { PostHogProvider } from "./providers";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -25,13 +26,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body
-        className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased`}
-      >
-        <div className="max-w-3xl 2xl:max-w-4xl mx-auto px-5 sm:px-8 lg:px-10 py-8 sm:py-10 lg:py-12">
-          {children}
-        </div>
+    <html lang="en">
+      <body className="antialiased overflow-x-hidden">
+        <PostHogProvider>
+          <div className="max-w-3xl mx-auto px-4 sm:px-8 md:px-10 py-10">{children}</div>
+        </PostHogProvider>
       </body>
     </html>
   );

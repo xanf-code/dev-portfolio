@@ -4,133 +4,67 @@ import { Badge } from "@/components/ui/badge";
 export default function Home() {
   return (
     <MainLayout>
-      <section className="max-w-3xl space-y-12">
-        <div>
-          <h1 className="text-5xl font-bold mb-3 tracking-tight bg-linear-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-            hi hi ~
+      <section className="max-w-2xl">
+        <div className="mb-12">
+          <h1 className="text-3xl sm:text-4xl font-bold mb-4">
+            Software Engineer
           </h1>
+          <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
+            I build scalable architecture and high-throughput systems. 
+            Currently focused on core Java, full-stack development, and AI Development with an emphasis on simplicity and aesthetic ideals.
+          </p>
         </div>
 
-        <section className="space-y-6 text-gray-300">
-          <p className="text-lg leading-relaxed">
-            I enjoy building LLM-powered recommendation systems, scalable
-            architectures, and high-throughput products. Today, I focus on core
-            and full-stack engineering while aligning my work with strong
-            principles and clean design.
-          </p>
-          <p className="text-lg font-medium text-white">About me:</p>
+        <div className="space-y-12">
+          <div>
+            <h2 className="text-sm font-bold uppercase tracking-widest text-gray-400 mb-6">Education</h2>
+            <div className="border-l border-black pl-6">
+              <div className="font-bold">Northeastern University, Boston</div>
+              <div className="text-sm text-gray-500">MS, Software Engineering - 2026</div>
+            </div>
+          </div>
 
-          <ul className="space-y-4">
-            <li className="flex items-start group">
-              <span
-                aria-hidden="true"
-                className="mr-3 text-xl group-hover:scale-110 transition-transform"
-              >
-                🎓
-              </span>
-              <div>
-                <span className="text-lg leading-relaxed">
-                  Northeastern University, Boston
-                </span>
-                <div className="flex gap-2 mt-2">
-                  <Badge>MS, Software Engineering</Badge>
-                  <Badge>2026</Badge>
-                </div>
+          <div>
+            <h2 className="text-sm font-bold uppercase tracking-widest text-gray-400 mb-6">Experience</h2>
+            <div className="space-y-8">
+              <div className="border-l border-black pl-6">
+                <div className="font-bold">Dassault Systèmes</div>
+                <div className="text-sm text-gray-500">Software Engineer co-op</div>
+                <p className="mt-2 text-sm text-gray-600">Python, Java, ML, AI Agents</p>
               </div>
-            </li>
-            <li className="flex items-start group">
-              <span
-                aria-hidden="true"
-                className="mr-3 text-xl group-hover:scale-110 transition-transform"
-              >
-                💻
-              </span>
-              <div>
-                <span className="text-lg leading-relaxed">
-                  Applied ML/AI Engineer at Dassault Systèmes (Jul 2025 - Jan
-                  2026)
-                </span>
-                <div className="flex gap-2 mt-2">
-                  <Badge>Python</Badge>
-                  <Badge>ML</Badge>
-                  <Badge>AI Agents</Badge>
-                </div>
+              <div className="border-l border-black pl-6">
+                <div className="font-bold">London Stock Exchange Group</div>
+                <div className="text-sm text-gray-500">Software Engineer</div>
+                <p className="mt-2 text-sm text-gray-600">Java, Spring Boot, AWS</p>
               </div>
-            </li>
-          </ul>
-        </section>
+            </div>
+          </div>
+        </div>
 
-        <section className="space-y-3">
-          <h2 className="text-xl font-semibold text-white">Certifications</h2>
-          <p className="text-sm text-gray-400">
-            Industry-recognized AWS certifications validating cloud architecture
-            and development skills.
-          </p>
-          <ul className="space-y-3">
-            <li className="flex items-start group">
-              <span
-                aria-hidden="true"
-                className="mr-3 text-xl group-hover:scale-110 transition-transform"
-              >
-                ☁️
-              </span>
-              <div>
-                <span className="text-lg leading-relaxed">
-                  AWS Certified Developer - Associate
-                </span>
-                <div className="flex gap-2 mt-2">
-                  <Badge>AWS</Badge>
-                  <Badge>Associate</Badge>
-                </div>
-              </div>
-            </li>
-            <li className="flex items-start group">
-              <span
-                aria-hidden="true"
-                className="mr-3 text-xl group-hover:scale-110 transition-transform"
-              >
-                🏗️
-              </span>
-              <div>
-                <span className="text-lg leading-relaxed">
-                  AWS Certified Solutions Architect - Associate
-                </span>
-                <div className="flex gap-2 mt-2">
-                  <Badge>AWS</Badge>
-                  <Badge>Associate</Badge>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </section>
-
-        <section className="flex flex-col space-y-3 text-sm">
+        <div className="flex flex-col space-y-4 mt-16 text-sm font-medium">
           <a
             href="https://www.linkedin.com/in/darshanaswath/"
-            className="flex items-center text-gray-400 hover:text-white transition-colors duration-200 group"
+            className="flex items-center no-underline hover:underline"
             rel="noopener noreferrer"
           >
-            <span className="mr-2">→</span>
-            <span className="group-hover:underline">darshan.linkedin</span>
+            LinkedIn
           </a>
           <a
             href="https://github.com/xanf-code"
-            className="flex items-center text-gray-400 hover:text-white transition-colors duration-200 group"
+            className="flex items-center no-underline hover:underline"
             rel="noopener noreferrer"
             target="_blank"
           >
-            <span className="mr-2">→</span>
-            <span className="group-hover:underline">@xanf-code</span>
+            GitHub
           </a>
           <a
             href="mailto:darshanaswath@gmail.com"
-            className="flex items-center text-gray-400 hover:text-white transition-colors duration-200 group"
+            className="flex items-center no-underline hover:underline"
             rel="noopener noreferrer"
           >
-            <span className="mr-2">→</span>
-            <span className="group-hover:underline">darshanaswath@gmail.com</span>
+            Email
           </a>
-        </section>
+        </div>
       </section>
     </MainLayout>
   );

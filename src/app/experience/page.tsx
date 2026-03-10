@@ -8,93 +8,35 @@ import experienceData from "@/data/experience.json";
 export default function Experience() {
   return (
     <MainLayout>
-      <section className="max-w-4xl px-2sm:px-4 mx-auto">
-        <div className="mb-8">
-          <h1 className="text-gray-300">experience</h1>
-          <h2 className="text-white text-3xl font-bold">work history</h2>
+      <section className="max-w-2xl">
+        <div className="mb-12">
+          <h1 className="text-3xl font-bold">Experience</h1>
         </div>
 
-        <div className="space-y-12">
+        <div className="space-y-20">
           {experienceData.experiences.map((exp, index) => (
-            <div key={index} className="relative">
-              {/* Timeline line (only on sm and up) */}
-              {index !== experienceData.experiences.length - 1 && (
-                <div className="absolute left-7 top-12 bottom-0 w-0.5 bg-zinc-700 hidden sm:block" />
-              )}
-
-              <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
-                {/* Timeline column (dot/line) */}
-                <div className="hidden sm:flex flex-col items-center w-16 relative pt-2">
-                  <div className="w-8 h-8 rounded-full bg-zinc-800 border-2 border-blue-400 flex items-center justify-center">
-                    <div className="w-3 h-3 rounded-full bg-blue-400" />
-                  </div>
+            <div key={index} className="relative border-l border-black pl-4 sm:pl-8 pb-4">
+              <div className="absolute -left-[5px] top-0 w-2 h-2 bg-black rounded-full" />
+              
+              <div className="flex flex-col gap-1 mb-6">
+                <h3 className="text-xl font-bold">{exp.role}</h3>
+                <div className="flex justify-between items-baseline flex-wrap gap-2 text-sm">
+                  <span className="font-bold uppercase tracking-widest text-gray-500">{exp.company}</span>
+                  <span className="text-gray-400 font-medium">{exp.period}</span>
                 </div>
+                <div className="text-xs text-gray-400 uppercase tracking-widest">{exp.location}</div>
+              </div>
 
-                {/* Content */}
-                <div className="flex-1">
-                  <div className="mb-4">
-                    <div className="flex items-center gap-3 sm:gap-4 mb-2 flex-row">
-                      {exp.logo && (
-                        <div className="relative w-10 h-10 sm:w-12 sm:h-12">
-                          <Image
-                            src={exp.logo}
-                            alt={`${exp.company} logo`}
-                            fill
-                            className="object-contain"
-                          />
-                        </div>
-                      )}
-                      <div className="text-left">
-                        <h3 className="text-lg sm:text-xl font-semibold text-white">
-                          {exp.role}
-                        </h3>
-                        {/* Desktop: company • period, then location below */}
-                        <div className="hidden sm:flex flex-wrap items-center gap-2 text-gray-400 text-base">
-                          <span>{exp.company}</span>
-                          <span>•</span>
-                          <span>{exp.period}</span>
-                        </div>
-                        <div className="hidden sm:block text-sm text-gray-500">
-                          {exp.location}
-                        </div>
-                        {/* Mobile: company, then location + period below */}
-                        <div className="sm:hidden">
-                          <div className="text-gray-400 text-sm">
-                            {exp.company}
-                          </div>
-                          <div className="flex flex-wrap items-center gap-2 text-xs text-gray-500 mt-1">
-                            <span>{exp.location}</span>
-                            <span>•</span>
-                            <span>{exp.period}</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+              <ul className="space-y-3 mb-8">
+                {exp.description.map((item, idx) => (
+                  <li key={idx} className="text-sm text-gray-600 leading-relaxed list-disc list-outside ml-4">
+                    {item}
+                  </li>
+                ))}
+              </ul>
 
-                  <ul className="space-y-2 mb-4">
-                    {exp.description.map((item, idx) => (
-                      <li
-                        key={idx}
-                        className="text-gray-300 flex items-start text-sm sm:text-base"
-                      >
-                        <span className="mr-2">→</span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div className="flex flex-wrap gap-2 mt-2 mb-1 justify-start">
-                    {exp.technologies.map((tech, idx) => (
-                      <Badge
-                        key={idx}
-                        className="bg-zinc-800/50 hover:bg-zinc-700/50 transition-colors text-xs sm:text-sm px-2 py-1"
-                      >
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
+              <div className="flex flex-wrap gap-x-4 gap-y-1 text-[10px] font-bold uppercase tracking-widest text-gray-400">
+                {exp.technologies.join(" / ")}
               </div>
             </div>
           ))}
@@ -103,3 +45,4 @@ export default function Experience() {
     </MainLayout>
   );
 }
+

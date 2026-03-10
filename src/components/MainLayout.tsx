@@ -1,6 +1,7 @@
 "use client";
 
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 interface MainLayoutProps {
   children: React.ReactNode;
@@ -8,9 +9,11 @@ interface MainLayoutProps {
 
 export default function MainLayout({ children }: MainLayoutProps) {
   return (
-    <main>
+    <div className="flex flex-col min-h-screen">
       <Header />
-      <div className="min-h-[calc(100vh-250px)]">{children}</div>
-    </main>
+      <main className="flex-1">{children}</main>
+      <Footer />
+    </div>
   );
 }
+

@@ -22,25 +22,19 @@ export default function Blog() {
   return (
     <MainLayout>
       <section className="max-w-3xl">
-        <h1 className="text-4xl font-bold mb-8 tracking-tight">Blog</h1>
-        <div className="space-y-6">
+        <h1 className="text-3xl font-bold mb-8 sm:mb-12">Blog</h1>
+        <div className="flex flex-col gap-8 sm:gap-12">
           {blogPosts.map((post) => (
-            <article
-              key={post.id}
-              className="border-l-2 border-[#0ea5e9] pl-6 py-2 hover:border-[#10b981] transition-colors group"
-            >
-              <Link href={`/blog/${post.id}`}>
+            <article key={post.id} className="group">
+              <Link href={`/blog/${post.id}`} className="no-underline">
                 <div className="space-y-2">
-                  <h2 className="text-2xl font-semibold text-white group-hover:text-[#0ea5e9] transition-colors">
+                  <h2 className="text-xl font-bold group-hover:underline">
                     {post.title}
                   </h2>
-                  <time className="text-sm text-gray-400">{post.date}</time>
-                  <p className="text-gray-300 leading-relaxed">
+                  <div className="text-sm text-gray-500 mb-2">{post.date}</div>
+                  <p className="text-gray-600 leading-relaxed text-sm">
                     {post.excerpt}
                   </p>
-                  <span className="inline-block text-[#0ea5e9] group-hover:translate-x-1 transition-transform">
-                    Read more →
-                  </span>
                 </div>
               </Link>
             </article>
@@ -50,3 +44,4 @@ export default function Blog() {
     </MainLayout>
   );
 }
+

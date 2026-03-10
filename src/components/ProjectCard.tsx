@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { generatePlaceholderSVG } from "./PlaceholderImage";
-import { Badge } from "@/components/ui/badge";
 
 type ProjectStatus = "released" | "develop" | "progress" | "archived";
 
@@ -16,18 +16,12 @@ interface ProjectCardProps {
   skills: string;
 }
 
-const renderSkills = (skills: string) => (
-  <div className="flex flex-wrap gap-2 mt-2">
-    {skills.split(",").map((skill, idx) => (
-      <Badge key={idx}>{skill.trim()}</Badge>
-    ))}
-  </div>
-);
 
 export default function ProjectCard({
   title,
   description,
   imageUrl,
+  link,
   status,
   bgColor = "#222",
   skills,
@@ -35,43 +29,20 @@ export default function ProjectCard({
   const imageSrc = imageUrl || generatePlaceholderSVG(title, bgColor);
 
   return (
-    <div className="relative flex flex-col">
-      <div className="relative w-full h-36 rounded-xs overflow-hidden border border-zinc-800 mb-3">
-        {typeof imageSrc === "string" && imageSrc.startsWith("data:") ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={imageSrc}
-            alt={title}
-            className="w-full h-full object-cover"
-          />
-        ) : (
-          <Image
-            src={imageSrc}
-            alt={title}
-            fill
-            className="object-cover"
-            quality={100}
-          />
-        )}
-
-        <div
-          className={`absolute bottom-3 right-3 px-3 py-1 text-sm font-medium ${
-            status === "released"
-              ? "bg-green-600 text-white"
-              : "bg-yellow-500 text-black"
-          }`}
-        >
-          {status}
+    <div className="relative flex flex-col group">
+      <Link href={link} className="no-underline">
+        <div className="flex justify-between items-baseline mb-1">
+          <h3 className="text-lg font-bold group-hover:underline">
+            {title}
+          </h3>
+          <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400">{status}</span>
         </div>
-      </div>
 
-      <h3 className="text-xl font-bold flex items-center hover:underline hover:decoration-dashed text-white">
-        {title}
-      </h3>
-
-      {/* Project Description */}
-      <p className="text-zinc-400">{description}</p>
-      {renderSkills(skills)}
+        <p className="text-sm text-gray-600 leading-relaxed italic">{description}</p>
+        <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-[10px] font-bold uppercase tracking-widest text-gray-400">
+          {skills.split(",").map((s) => s.trim()).join(" / ")}
+        </div>
+      </Link>
     </div>
   );
 }
