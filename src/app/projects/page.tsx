@@ -6,8 +6,6 @@ import ProjectCard from "@/components/ProjectCard";
 import { supabase } from "@/utils/supabase";
 import { Project } from "@/utils/database.types";
 import Link from "next/link";
-import Image from "next/image";
-import { Badge } from "@/components/ui/badge";
 
 const otherProjects = [
   {
@@ -32,6 +30,12 @@ export default function Projects() {
 
   useEffect(() => {
     async function fetchProjects() {
+      if (!supabase) {
+        setError("Projects are temporarily unavailable.");
+        setLoading(false);
+        return;
+      }
+
       try {
         const { data, error } = await supabase
           .from("projects")
@@ -106,4 +110,3 @@ export default function Projects() {
     </MainLayout>
   );
 }
-
