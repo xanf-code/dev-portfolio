@@ -30,7 +30,9 @@ export function PostHogProvider({ children }: { children: React.ReactNode }) {
     posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY as string, {
       api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST || 'https://us.i.posthog.com',
       person_profiles: 'identified_only',
-      capture_pageview: false // Disable automatic pageview capture, as we capture manually
+      capture_pageview: false, // Disable automatic pageview capture, as we capture manually
+      capture_pageleave: true, // Enable automatic pageleave and scroll depth tracking
+      capture_performance: true // Enable automatic Core Web Vitals ($web_vitals) tracking
     })
   }, [])
 
