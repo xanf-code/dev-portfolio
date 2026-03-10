@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { PostHogProvider } from "./providers";
 
@@ -30,6 +31,7 @@ export default function RootLayout({
       <body className="antialiased overflow-x-hidden">
         <PostHogProvider>
           <div className="max-w-3xl mx-auto px-4 sm:px-8 md:px-10 py-10">{children}</div>
+          <Analytics />
         </PostHogProvider>
       </body>
     </html>
