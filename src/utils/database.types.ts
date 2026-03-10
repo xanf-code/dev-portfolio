@@ -12,14 +12,4 @@ export interface Project {
   skills: string;
 }
 
-export type Database = {
-  public: {
-    Tables: {
-      projects: {
-        Row: Project;
-        Insert: Omit<Project, "id" | "created_at">;
-        Update: Partial<Omit<Project, "id" | "created_at">>;
-      };
-    };
-  };
-};
+

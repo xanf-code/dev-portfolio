@@ -1,11 +1,8 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import MainLayout from "@/components/MainLayout";
 import ProjectCard from "@/components/ProjectCard";
-import { supabase } from "@/utils/supabase";
 import { Project } from "@/utils/database.types";
 import Link from "next/link";
+import { neon } from "@neondatabase/serverless";
 
 const otherProjects = [
   {
@@ -23,42 +20,26 @@ const otherProjects = [
 ];
 
 
-export default function Projects() {
-  const [projects, setProjects] = useState<Project[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+export default async function Projects() {
+  let projects: Project[] = [];
+  let error: string | null = null;
 
-  useEffect(() => {
-    async function fetchProjects() {
-      if (!supabase) {
-        setError("Projects are temporarily unavailable.");
-        setLoading(false);
-        return;
-      }
-
-      try {
-        const { data, error } = await supabase
-          .from("projects")
-          .select("*")
-          .order("created_at", { ascending: false });
-
-        if (error) throw error;
-        if (data) setProjects(data);
-      } catch (error) {
-        console.error("Error fetching projects:", error);
-        setError("Failed to load projects.");
-      } finally {
-        setLoading(false);
-      }
+  try {
+    if (!process.env.DATABASE_URL) {
+      throw new Error("DATABASE_URL is not defined");
     }
-    fetchProjects();
-  }, []);
+    const sql = neon(process.env.DATABASE_URL);
+    projects = await sql`SELECT * FROM projects ORDER BY created_at DESC` as Project[];
+  } catch (e) {
+    console.error("Error fetching projects:", e);
+    error = "Failed to load projects.";
+  }
 
-  if (loading || error || projects.length === 0) {
+  if (error || projects.length === 0) {
     return (
       <MainLayout>
         <div className="py-20 text-center text-gray-400">
-          {loading ? "Loading..." : error || "No projects found."}
+          {error || "No projects found."}
         </div>
       </MainLayout>
     );
