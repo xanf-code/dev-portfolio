@@ -4,6 +4,8 @@ import { Project } from "@/utils/database.types";
 import Link from "next/link";
 import { neon } from "@neondatabase/serverless";
 
+export const dynamic = "force-dynamic";
+
 const otherProjects = [
   {
     title: "[fullstack]",
